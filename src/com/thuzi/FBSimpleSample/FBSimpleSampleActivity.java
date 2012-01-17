@@ -15,7 +15,7 @@ import com.facebook.android.FacebookError;
 
 public class FBSimpleSampleActivity extends Activity {
 	/** Called when the activity is first created. */
-	Facebook facebook = new Facebook("172721022829515");
+	Facebook facebook = new Facebook("YOUR_APP_ID");
 	WebView wv;
 	AsyncFacebookRunner Runner = new AsyncFacebookRunner(facebook);
 	String FILENAME = "AndroidSSO_data";

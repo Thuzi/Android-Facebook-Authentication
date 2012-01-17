@@ -5,24 +5,20 @@ Sample shows how to use SSO with Facebook as well as Dialog Authentication.  You
     
 To force Dialog only authentication, modify the Facebook.java file as such:
 
-`public void authorize(Activity activity, String[] permissions,
-            int activityCode, final DialogListener listener) {
-
-        boolean singleSignOnStarted = false;
-
-        mAuthDialogListener = listener;
-
-        // Prefer single sign-on, where available.
-//        if (activityCode >= 0) {
-//            singleSignOnStarted = startSingleSignOn(activity, mAppId,
-//                    permissions, activityCode);
-//        }
-        // Otherwise fall back to traditional dialog.
+	public void authorize(Activity activity, String[] permissions, int activityCode, final DialogListener listener) {
+	boolean singleSignOnStarted = false;
+	mAuthDialogListener = listener;
+	// Prefer single sign-on, where available.
+	//        if (activityCode >= 0) {
+	//            singleSignOnStarted = startSingleSignOn(activity, mAppId,
+	//                    permissions, activityCode);
+	//        }
+    // Otherwise fall back to traditional dialog. (We want dialog only)
         if (!singleSignOnStarted) {
             startDialogAuth(activity, permissions);
         }
-    }`
-    
+	}
+	
 This forces the dialog, thus allowing the cookie and session to carry over to web views inside your app.
     
 Dependencies:

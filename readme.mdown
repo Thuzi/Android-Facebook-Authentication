@@ -1,0 +1,32 @@
+Thuzi Facebook Android SDK Simple Sample
+====================
+
+Sample shows how to use SSO with Facebook as well as Dialog Authentication.  You will want to use Dialog Authentication when using plug-ins such as like, send, comments, etc.
+    
+To force Dialog only authentication, modify the Facebook.java file as such:
+
+`
+public void authorize(Activity activity, String[] permissions,
+            int activityCode, final DialogListener listener) {
+
+        boolean singleSignOnStarted = false;
+
+        mAuthDialogListener = listener;
+
+        // Prefer single sign-on, where available.
+//        if (activityCode >= 0) {
+//            singleSignOnStarted = startSingleSignOn(activity, mAppId,
+//                    permissions, activityCode);
+//        }
+        // Otherwise fall back to traditional dialog.
+        if (!singleSignOnStarted) {
+            startDialogAuth(activity, permissions);
+        }
+    }
+`
+    
+This forces the dialog, thus allowing the cookie and session to carry over to web views inside your app.
+    
+Dependencies:
+---------------------
+[Facebook Android SDK](https://github.com/facebook/facebook-android-sdk)

@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent">
 
-    <WebView 
+    <ImageButton
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="15dp"
+        android:contentDescription="Login"
+        android:src="@drawable/fblogin" />
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="20dp"
+        android:layout_y="15dp"
+        android:contentDescription="Logout"
+        android:src="@drawable/fblogout" />
+
+    <ImageButton
+        android:id="@+id/showLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="15dp"
+        android:contentDescription="Show like"
+        android:src="@drawable/fbshow" />
+
+    <ImageButton
+        android:id="@+id/hideLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="200dp"
+        android:layout_y="15dp"
+        android:contentDescription="Hide like"
+        android:src="@drawable/fbhide" />
+
+    <WebView
         android:id="@+id/wv"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-    />
+        android:layout_height="match_parent"
+        android:layout_x="0dp"
+        android:layout_y="120dp" />
 
-</LinearLayout>
+</AbsoluteLayout>

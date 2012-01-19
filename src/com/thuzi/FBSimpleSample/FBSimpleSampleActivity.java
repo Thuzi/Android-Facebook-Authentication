@@ -23,7 +23,6 @@ import com.facebook.android.FacebookError;
 public class FBSimpleSampleActivity extends Activity {
 	/** Called when the activity is first created. */
 	Facebook facebook = new Facebook("YOUR_APP_ID");
-	//Facebook facebook = new Facebook("172721022829515");
 	ImageButton login;
 	ImageButton logout;
 	ImageButton showlike;
